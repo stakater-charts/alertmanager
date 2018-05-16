@@ -23,7 +23,7 @@ provider: {{ .Values.alertmanager.labels.provider }}
 
 {{- define "labels.stakater" -}}
 {{ template "labels.selector" . }}
-version: {{ .Values.alertmanager.labels.version | quote }}
+version: "{{ .Values.alertmanager.labels.version }}"
 {{- end -}}
 
 {{- define "labels.chart" -}}
