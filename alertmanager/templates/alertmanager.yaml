@@ -10,4 +10,4 @@ metadata:
   version: {{ .Values.alertmanager.image.tag }}
   externalUrl: {{ .Values.alertmanager.externalUrl }}
   nodeSelector:
-    failure-domain.beta.kubernetes.io/zone: {{ .Values.alertmanager.kubernetesIoZone }}
+    failure-domain.beta.kubernetes.io/zone: {{ .Values.alertmanager.kubernetesZone }}
