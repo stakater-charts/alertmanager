@@ -9,6 +9,7 @@ alertmanager:
   replicas: 3
   externalUrl: http://127.0.0.1:9093
   kubernetesZone: us-west-2a
+  alertmanagerMain: main
   service:
     forceSslRedirect: "true"
     ingressClass: internal-ingress

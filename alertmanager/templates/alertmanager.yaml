@@ -9,5 +9,6 @@ metadata:
   replicas: {{ .Values.alertmanager.replicas }}
   version: {{ .Values.alertmanager.image.tag }}
   externalUrl: {{ .Values.alertmanager.externalUrl }}
+  alertmanager: {{ .Values.alertmanager.alertmanagerMain }}
   nodeSelector:
     failure-domain.beta.kubernetes.io/zone: {{ .Values.alertmanager.kubernetesZone }}
