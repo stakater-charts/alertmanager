@@ -3,12 +3,14 @@ kind: Alertmanager
 metadata:
   name: main
   labels:
-{{ include "labels.stakater" . | indent 4 }}
-{{ include "labels.chart" . | indent 4 }}
+{{ include "alertmanager.labels.stakater" . | indent 4 }}
+{{ include "alertmanager.labels.chart" . | indent 4 }}
   spec:
   replicas: {{ .Values.alertmanager.replicas }}
   version: {{ .Values.alertmanager.image.tag }}
   externalUrl: {{ .Values.alertmanager.externalUrl }}
   alertmanager: {{ .Values.alertmanager.alertmanagerMain }}
+  {{- if .Values.alertmanager.nodeSelector }}
   nodeSelector:
-    failure-domain.beta.kubernetes.io/zone: {{ .Values.alertmanager.kubernetesZone }}
+    {{ .Values.alertmanager.nodeSelector.key }}: {{ .Values.alertmanager.nodeSelector.value }}
+  {{- end }}
