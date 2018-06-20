@@ -3,12 +3,13 @@ alertmanager:
     group: com.stakater.platform
     provider: stakater
     version: 0.14.0
-  namespace: dev
   image:
     tag: v0.14.0
   replicas: 3
   externalUrl: http://127.0.0.1:9093
-  kubernetesZone: us-west-2a
+  nodeSelector:
+    key: failure-domain.beta.kubernetes.io/zone
+    value: us-west-2a
   alertmanagerMain: main
   service:
     forceSslRedirect: "true"
