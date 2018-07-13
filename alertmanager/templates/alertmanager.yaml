@@ -5,7 +5,7 @@ metadata:
   labels:
 {{ include "alertmanager.labels.stakater" . | indent 4 }}
 {{ include "alertmanager.labels.chart" . | indent 4 }}
-  spec:
+spec:
   replicas: {{ .Values.alertmanager.replicas }}
   version: {{ .Values.alertmanager.image.tag }}
   externalUrl: {{ .Values.alertmanager.externalUrl }}
