@@ -10,6 +10,27 @@ spec:
   version: {{ .Values.alertmanager.image.tag }}
   externalUrl: {{ .Values.alertmanager.externalUrl }}
   alertmanager: {{ .Values.alertmanager.alertmanagerMain }}
+  {{- with .Values.alertmanager.resources }}
+  resources:
+    {{- with .requests }}
+    requests:
+      {{- with .memory }}
+      memory: {{ . }}
+      {{- end }}
+      {{- with .cpu }}
+      cpu: {{ . }}
+      {{- end }}
+    {{- end }}
+    {{- with .limits }}
+    limits:
+      {{- with .memory }}
+      memory: {{ . }}
+      {{- end }}
+      {{- with .cpu }}
+      cpu: {{ . }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
   securityContext: {}
   {{- if .Values.alertmanager.nodeSelector }}
   nodeSelector:
