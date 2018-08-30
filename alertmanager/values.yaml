@@ -11,13 +11,13 @@ alertmanager:
     key: failure-domain.beta.kubernetes.io/zone
     value: us-west-2a
   alertmanagerMain: main
-  resources:
-    requests:
-      memory: 200Mi
-      cpu: 200m
-    limits:
-      memory: 400Mi
-      cpu: 400m
+  # resources:
+  #   requests:
+  #     memory: 200Mi
+  #     cpu: 200m
+  #   limits:
+  #     memory: 400Mi
+  #     cpu: 400m
   service:
     forceSslRedirect: "true"
     ingressClass: internal-ingress
