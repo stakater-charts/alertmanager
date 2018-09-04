@@ -5,7 +5,7 @@ version: 1.0.8
 keywords:
   - alertmanager
   - kubernetes
-home: https://github.com/stakater/chart-alertmanager
+home: https://github.com/stakater-charts/alertmanager
 maintainers:
 - name: Stakater
   email: stakater@aurorasolutions.io
