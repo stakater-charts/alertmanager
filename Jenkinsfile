@@ -5,5 +5,6 @@ def dummy = ""
 
 prepareAndUploadCharts {
     charts = [ "alertmanager" ]
-    isPublic = true
+    publicChartRepositoryURL = 'https://stakater.github.io/stakater-charts'
+    publicChartGitURL = 'git@github.com:stakater/stakater-charts.git'
 }
