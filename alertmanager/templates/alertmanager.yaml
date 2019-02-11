@@ -8,6 +8,9 @@ metadata:
 spec:
   replicas: {{ .Values.alertmanager.replicas }}
   version: {{ .Values.alertmanager.image.tag }}
+  {{- if .Values.alertmanager.image.name }}
+  baseImage: {{ .Values.alertmanager.image.name }}
+  {{- end }}
   externalUrl: {{ .Values.alertmanager.externalUrl }}
   alertmanager: {{ .Values.alertmanager.alertmanagerMain }}
   {{- with .Values.alertmanager.resources }}
