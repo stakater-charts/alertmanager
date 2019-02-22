@@ -6,6 +6,10 @@ metadata:
 {{ include "alertmanager.labels.stakater" . | indent 4 }}
 {{ include "alertmanager.labels.chart" . | indent 4 }}
 spec:
+  {{- if .Values.alertmanager.tolerations }}
+  tolerations:
+{{ toYaml .Values.alertmanager.tolerations | indent 4 -}}
+  {{- end }}
   replicas: {{ .Values.alertmanager.replicas }}
   version: {{ .Values.alertmanager.image.tag }}
   {{- if .Values.alertmanager.image.name }}
