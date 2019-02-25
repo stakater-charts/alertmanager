@@ -41,5 +41,5 @@ spec:
   securityContext: {}
   {{- if .Values.alertmanager.nodeSelector }}
   nodeSelector:
-    {{ .Values.alertmanager.nodeSelector.key }}: {{ .Values.alertmanager.nodeSelector.value }}
+    {{ .Values.alertmanager.nodeSelector.key }}: "{{ .Values.alertmanager.nodeSelector.value }}"
   {{- end }}
